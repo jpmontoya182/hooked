@@ -5,19 +5,15 @@ const DEFAULT_PLACEHOLDER_IMAGE =
 
 const Movie = ({ movie }) => {
   const poster =
-    movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.poster;
+    movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
 
   return (
     <div className="movie">
-      <h2>{movie.Title}</h2>
+      <h2 className="movie-title">{movie.Title}</h2>
       <div>
-        <img
-          className="movie-poster"
-          alt={`The movie titled: ${movie.Title}`}
-          src={poster}
-        />
+        <img alt={`The movie titled: ${movie.Title}`} src={poster} />
       </div>
-      <p>({movie.Year})</p>
+      <p className="movie-year">({movie.Year})</p>
     </div>
   );
 };
